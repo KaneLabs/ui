@@ -2,7 +2,7 @@ import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Icon } from 'material-bread';
 import { Dimensions } from 'react-native';
-import theme from 'theme';
+import { theme } from 'ui';
 
 const { width: deviceWidth } = Dimensions.get('window');
 

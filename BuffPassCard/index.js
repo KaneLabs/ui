@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { Heading } from 'material-bread';
 import styles from './styles';
-import theme from 'theme';
+import { theme } from 'ui';
 
 const propTypes = {
   children: PropTypes.node,
