@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { Marker } from 'react-native-maps';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { Icon } from 'ui';
-import theme from 'theme';
 
 const latLngType = { latitude: PropTypes.number, longitude: PropTypes.number };
 
@@ -20,25 +18,23 @@ LocationMarker.propTypes = {
   coordinate: PropTypes.shape(latLngType).isRequired,
 };
 
-const iconSize = theme.$iconSize / 2;
-
 const styles = EStyleSheet.create({
-  marker: {
-
+  icon: {
+    height: '$iconSize / 2',
+    width: '$iconSize / 2',
   },
-  triabgle: {
-
-  },
+  marker: {},
+  triabgle: {},
   pin: {
     color: '$iconColor',
-    height: iconSize,
-    width: iconSize,
+    height: '$iconSize / 2',
+    width: '$iconSize / 2',
   },
   circle: {
     backgroundColor: 'rgba(255,255,255,0.67)',
-    height: iconSize,
-    width: iconSize,
-    borderRadius: iconSize,
+    height: '$iconSize / 2',
+    width: '$iconSize / 2',
+    borderRadius: '$iconSize / 2',
     alignItems: 'center',
     justifyContent: 'center',
   },

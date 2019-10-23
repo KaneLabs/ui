@@ -1,9 +1,8 @@
 import React from 'react';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Icon, Heading } from 'material-bread';
-import { View, Dimensions, Text } from 'react-native';
-import { Title, BodyText } from 'ui';
-import theme from 'theme';
+import { View, Dimensions } from 'react-native';
+import { Title, BodyText, theme } from 'ui';
 
 const { width: deviceWidth } = Dimensions.get('window');
 

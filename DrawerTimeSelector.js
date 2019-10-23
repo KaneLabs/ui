@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DrawerBottom } from 'material-bread';
 import { View, Text } from 'react-native';
-import theme from 'theme';
+import { theme } from 'ui';
 import { useLazyQuery } from '@apollo/react-hooks';
 import { GET_AVAILABLE_TIMES } from 'queries';
 import { AvailableTimesList } from 'containers';
