@@ -4,37 +4,32 @@ import { useQuery } from '@apollo/react-hooks';
 import { SEARCH } from 'queries';
 import { withNavigation } from 'react-navigation';
 import { SearchListItem } from './SearchListItem';
-import { List } from '../List';
+import { List } from 'ui';
 
-export const SearchList = withNavigation(({ searchText = '', navigation, onSelect }) => {
-  const { data, error, loading } = useQuery(SEARCH, {
-    variables: { searchText },
-  });
+export const SearchList = withNavigation(
+  ({ products = [], navigation, onSelect }) => {
+    // const navigateToItem = item => {
+    //   navigation.navigate('ITEM', { ...item });
+    // };
+    if (products.length > 0) {
+      return (
+        <List testID="SearchResults" noPadding>
+          {products.map((product, i) => (
+            <SearchListItem
+             testID={`SearchResult-${i}`}
+              // onPressIn={() => navigateToItem(product)}
+              onSelect={() => onSelect(product)}
+              key={product.id}
+              {...product}
+            />
+          ))}
+        </List>
+      );
+    }
 
-  const navigateToItem = item => {
-    navigation.navigate('ITEM', { ...item });
-  };
-
-  if (error) return null;
-  if (loading) return null;
-
-  if (data && data.search && data.search.length > 0) {
-    return (
-      <List noPadding>
-        {data.search.map(item => (
-          <SearchListItem
-            onPressIn={() => navigateToItem(item)}
-            onSelect={() => onSelect(item)}
-            key={item.id}
-            {...item}
-          />
-        ))}
-      </List>
-    );
-  }
-
-  return null;
-});
+    return null;
+  },
+);
 
 SearchList.propTypes = {
   searchText: propTypes.string.isRequired,

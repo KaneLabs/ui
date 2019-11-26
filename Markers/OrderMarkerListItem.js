@@ -2,29 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Dimensions } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { BodyText } from 'ui';
+import { BodyText, ListIcon, ListContent } from 'ui';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 
 const latLngType = { latitude: PropTypes.number, longitude: PropTypes.number };
-
-export const ListIcon = ({ icon }) => (
-  <View style={styles.listIcon}>
-    <FontAwesome
-      name={icon}
-      size={styles.icon.width}
-      color={styles.icon.color}
-    />
-  </View>
-);
-
-export const ListContent = ({ text, children, centerText }) => (
-  <View style={[styles.content, centerText && styles.center]}>
-    {text && <BodyText>{text}</BodyText>}
-    {children}
-  </View>
-);
 
 export const OrderMarkerListItem = ({ text = null, children = null, icon, iconLeft = null, iconRight = null }) => {
   const leftIcon = iconLeft || icon;

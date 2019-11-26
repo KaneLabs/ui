@@ -10,16 +10,17 @@ export const SearchListItem = ({
   uri = null,
   onPressIn,
   onSelect,
+  ...rest
 }) => {
   return (
-    <View style={styles.listItem}>
-        <Ripple style={styles.listContent} onPressIn={onPressIn}>
+    <View {...rest} style={styles.listItem}>
+      <Ripple style={styles.listContent} onPressIn={onPressIn}>
         {uri && (
           <Avatar
             type="image"
             image={<Image source={{ uri }} />}
             size={36}
-            style={{ marginRight: 8 }}
+            style={styles.avatar}
           />
         )}
 
@@ -29,7 +30,7 @@ export const SearchListItem = ({
         </View>
       </Ripple>
 
-      <Button onPressIn={() => onSelect()} text='Add to Drop' />
+      <Button onPressIn={() => onSelect()} text="Add to Drop" />
     </View>
   );
 };
@@ -48,6 +49,7 @@ SearchListItem.defaultProps = {
 };
 
 const styles = EStyleSheet.create({
+  avatar: { marginRight: 8 },
   listItem: {
     minHeight: 48,
     flexDirection: 'row',

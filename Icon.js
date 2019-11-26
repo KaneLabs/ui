@@ -1,4 +1,4 @@
 import React from 'react';
-import { Icon as BreadIcon } from 'material-bread';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-export const Icon = props => <BreadIcon {...props} />;
+export const Icon = props => <MaterialIcons {...props} />;

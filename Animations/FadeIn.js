@@ -20,3 +20,18 @@ export function FadeIn({ fadeIn, children }) {
     </Animated.View>
   );
 }
+
+
+export const useFadeIn = ({ duration = 2000, delay = 0 }) => {
+  const opacity = new Animated.Value(0);
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration,
+      delay,
+    }).start();
+  }, []);
+
+  return opacity;
+};

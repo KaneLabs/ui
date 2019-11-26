@@ -15,9 +15,8 @@ const styles = EStyleSheet.create({
     color: '$textColor.secondary',
     fontSize: 12,
     lineHeight: 12,
-    letterSpacing: 0.4,
   },
   gutterBottom: {
-    marginBottom: '$unit / 4',
+    marginBottom: '$unit / 2',
   },
 });

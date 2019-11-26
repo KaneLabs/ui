@@ -7,7 +7,7 @@ export const ProductListSmall = ({ products = [] }) => {
   return (
     <View style={styles.productLst}>
       <BodyText style={styles.subheader} text="Order Items" gutterBottom />
-      <Row>
+      <Row style={styles.row}>
         {products.map(product => (
           <ProductSmall key={product.id} {...product} />
         ))}
@@ -17,6 +17,7 @@ export const ProductListSmall = ({ products = [] }) => {
 };
 
 const styles = EStyleSheet.create({
-  productLst: { width: '100%' },
-  subheader: { paddingHorizontal: 8 },
+  productLst: { width: '100%', paddingVertical: 8 },
+  subheader: { paddingHorizontal: 16 },
+  row: { paddingHorizontal: 8, overflow: 'hidden' },
 });

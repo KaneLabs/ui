@@ -5,7 +5,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 const TextField = forwardRef((props, ref) => {
   const { style = {}, theme = 'dark', ...rest } = props;
 
-  console.log('ref', ref);
+  console.log("rest", rest);
 
   return (
     <TextInput
